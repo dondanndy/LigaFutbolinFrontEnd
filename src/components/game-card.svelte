@@ -9,7 +9,7 @@
 </script>
 
 <div class="w-full">
-<Card size="xl" class="{match.result ? 'dark:bg-slate-900' : 'dark:bg-slate-800'}">
+<Card size="xl" class="{match.result ? 'dark:bg-gray-900' : 'dark:bg-gray-800'}">
   <div class="flex flex-row items-center">
     <div class="flex flex-col justify-items-start w-2/5">
       <div class="py-1">
