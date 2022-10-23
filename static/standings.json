@@ -1,0 +1,58 @@
+[
+  {
+    "position": 1,
+    "player":{
+      "name": "player1",
+      "surname": "surname1",
+      "avatar": "user.png"
+    },
+    "points": 6,
+    "games_played": 3,
+    "games_won": 2,
+    "games_lost": 1,
+    "goals_for": 7,
+    "goals_against": 5
+  },
+  {
+    "position": 2,
+    "player":{
+      "name": "player2",
+      "surname": "surname2",
+      "avatar": "user.png"
+    },
+    "points": 6,
+    "games_played": 3,
+    "games_won": 2,
+    "games_lost": 1,
+    "goals_for": 4,
+    "goals_against": 2
+  },
+  {
+    "position": 3,
+    "player":{
+      "name": "player3",
+      "surname": "surname3",
+      "avatar": "user.png"
+    },
+    "points": 6,
+    "games_played": 3,
+    "games_won": 1,
+    "games_lost": 2,
+    "goals_for": 7,
+    "goals_against": 5
+  },
+  {
+    "position": 4,
+    "player":{
+      "name": "player4",
+      "surname": "surname4",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 3,
+    "games_won": 0,
+    "games_lost": 3,
+    "goals_for": 10,
+    "goals_against": 0
+  }
+]
