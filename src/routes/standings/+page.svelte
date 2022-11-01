@@ -2,20 +2,10 @@
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
 
   import {onMount} from 'svelte';
-  import type { Player } from "../../models/models";
+  import type { StandingsPlayer } from "./StandingPlayer";
 
   import PlayerComponent from "../../components/player-component.svelte";
 
-  interface StandingsPlayer {
-    position: number,
-    player: Player,
-    points: number,
-    games_played: number,
-    games_won: number,
-    games_lost: number,
-    goals_for: number,
-    goals_against: number
-  }
 
   let standings: StandingsPlayer[] = [];
 

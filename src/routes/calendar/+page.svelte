@@ -30,7 +30,7 @@
 
 <Accordion multiple>
   {#each calendar as matchday}
-    <AccordionItem open>
+    <AccordionItem>
       <span slot="header">Jornada {matchday.matchday}</span>
       
       <div id={`matches-${matchday.matchday}`} class="flex flex-row flex-wrap justify-evenly justify-self-center">
