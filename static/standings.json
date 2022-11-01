@@ -1,58 +1,170 @@
 [
   {
     "position": 1,
-    "player":{
+    "player": {
       "name": "player1",
       "surname": "surname1",
       "avatar": "user.png"
     },
-    "points": 6,
-    "games_played": 3,
-    "games_won": 2,
-    "games_lost": 1,
-    "goals_for": 7,
-    "goals_against": 5
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
   },
   {
     "position": 2,
-    "player":{
+    "player": {
       "name": "player2",
       "surname": "surname2",
       "avatar": "user.png"
     },
-    "points": 6,
-    "games_played": 3,
-    "games_won": 2,
-    "games_lost": 1,
-    "goals_for": 4,
-    "goals_against": 2
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
   },
   {
     "position": 3,
-    "player":{
+    "player": {
       "name": "player3",
       "surname": "surname3",
       "avatar": "user.png"
     },
-    "points": 6,
-    "games_played": 3,
-    "games_won": 1,
-    "games_lost": 2,
-    "goals_for": 7,
-    "goals_against": 5
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
   },
   {
     "position": 4,
-    "player":{
+    "player": {
       "name": "player4",
       "surname": "surname4",
       "avatar": "user.png"
     },
     "points": 0,
-    "games_played": 3,
+    "games_played": 0,
     "games_won": 0,
-    "games_lost": 3,
-    "goals_for": 10,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 5,
+    "player": {
+      "name": "player5",
+      "surname": "surname5",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 6,
+    "player": {
+      "name": "player6",
+      "surname": "surname6",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 7,
+    "player": {
+      "name": "player7",
+      "surname": "surname7",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 8,
+    "player": {
+      "name": "player8",
+      "surname": "surname8",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 9,
+    "player": {
+      "name": "player9",
+      "surname": "surname9",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 10,
+    "player": {
+      "name": "player10",
+      "surname": "surname10",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 11,
+    "player": {
+      "name": "player11",
+      "surname": "surname11",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
+    "goals_against": 0
+  },
+  {
+    "position": 12,
+    "player": {
+      "name": "player12",
+      "surname": "surname12",
+      "avatar": "user.png"
+    },
+    "points": 0,
+    "games_played": 0,
+    "games_won": 0,
+    "games_lost": 0,
+    "goals_for": 0,
     "goals_against": 0
   }
 ]
