@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Button, NumberInput } from "flowbite-svelte";
 
+  import ResultInput from "./result-input.svelte";
   import PlayerComponent from "./player-component.svelte";
   import type { Match, MatchResult } from "../models/models"
   
@@ -47,7 +48,7 @@
 
     <div class="flex flex-col md:flex-row justify-center content-center py-3 md:py-1">
       <div class="w-20 flex">
-        <NumberInput bind:value={result.team1} />
+        <ResultInput bind:value={result.team1} />
       </div>
       
       <div class="text-3xl font-bold px-2 invisible md:visible">
@@ -55,7 +56,7 @@
       </div>
       
       <div class="w-20 flex">
-        <NumberInput bind:value={result.team2} />
+        <ResultInput bind:value={result.team2} />
       </div>
     </div>
     
