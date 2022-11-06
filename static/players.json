@@ -1,0 +1,76 @@
+{
+  "players" : [
+    {
+        "id": "player1",
+        "name": "player1",
+        "surname": "surname1",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player2",
+        "name": "player2",
+        "surname": "surname2",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player3",
+        "name": "player3",
+        "surname": "surname3",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player4",
+        "name": "player4",
+        "surname": "surname4",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player5",
+        "name": "player5",
+        "surname": "surname5",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player6",
+        "name": "player6",
+        "surname": "surname6",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player7",
+        "name": "player7",
+        "surname": "surname7",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player8",
+        "name": "player8",
+        "surname": "surname8",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player9",
+        "name": "player9",
+        "surname": "surname9",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player10",
+        "name": "player10",
+        "surname": "surname10",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player11",
+        "name": "player11",
+        "surname": "surname11",
+        "avatar": "user.png"
+    },
+    {
+        "id": "player12",
+        "name": "player12",
+        "surname": "surname12",
+        "avatar": "user.png"
+    }
+  ]
+}

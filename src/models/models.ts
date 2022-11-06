@@ -1,4 +1,5 @@
 export type Player = {
+  id: string,
   name: string,
   surname: string,
   avatar: string
@@ -9,11 +10,14 @@ export type Team = {
   player2 : Player
 }
 
+export type MatchResult = {
+  team1: number,
+  team2: number
+}
+
 export type Match = {
+  id: string,
   team1: Team,
   team2: Team,
-  result: {
-    team1: number,
-    team2: number
-  }
+  result: MatchResult
 }
