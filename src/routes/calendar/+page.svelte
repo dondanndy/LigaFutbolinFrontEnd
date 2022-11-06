@@ -4,12 +4,7 @@
   import { AccordionItem, Accordion } from 'flowbite-svelte'
 
   import GameCard from "../../components/game-card.svelte";
-  import type { Match } from "../../models/models";
-
-  interface MatchDay {
-    matchday: number,
-    matches: Match[]
-  }
+  import type { MatchDay } from "../../models/models";
 
   let calendar: MatchDay[] = [];
 
@@ -31,7 +26,7 @@
 <Accordion multiple>
   {#each calendar as matchday}
     <AccordionItem>
-      <span slot="header">Jornada {matchday.matchday}</span>
+      <span slot="header">Jornada {matchday.matchday} - {(new Date(matchday.date)).toLocaleDateString()}</span>
       
       <div id={`matches-${matchday.matchday}`} class="flex flex-row flex-wrap justify-evenly justify-self-center">
         {#each matchday.matches as match}

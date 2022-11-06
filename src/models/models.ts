@@ -21,3 +21,9 @@ export type Match = {
   team2: Team,
   result: MatchResult
 }
+
+export type MatchDay = {
+  date: Date,
+  matchday: number,
+  matches: Match[]
+}
