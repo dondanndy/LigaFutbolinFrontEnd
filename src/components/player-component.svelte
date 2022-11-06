@@ -20,7 +20,7 @@
   </div>
 
   {#if left}
-    <div class="flex justify-begin items-center w-1/3 max-w-fit pl-1">
+    <div class="flex justify-begin items-center w-1/3 min-w-fit max-w-fit pl-1">
       <Avatar src={player.avatar} alt={`${player.name} ${player.surname} avatar`} size="xs"/>
     </div>
   {/if}
