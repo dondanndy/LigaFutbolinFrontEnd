@@ -66,8 +66,9 @@
     </div>
 
     <div class="py-3">
-      <Table>
+      <Table divClass="relative overflow-x-auto rounded-lg">
         <TableHead theadClass="uppercase text-right text-xs">
+          <TableHeadCell></TableHeadCell>
           <TableHeadCell class="text-center">Jugador</TableHeadCell>
           <TableHeadCell>Puntos</TableHeadCell>
           <TableHeadCell>P. Ganados </TableHeadCell>
@@ -76,6 +77,7 @@
         <TableBody class="divide-y">
           {#each standings as standingsPlayer}
             <TableBodyRow trClass="text-right">
+              <TableBodyCell> <span class="font-bold text-current">{standingsPlayer.position} </span></TableBodyCell>
               <TableBodyCell><PlayerComponent player={standingsPlayer.player}/></TableBodyCell>
               <TableBodyCell> {standingsPlayer.points } </TableBodyCell>
               <TableBodyCell> {standingsPlayer.games_won } </TableBodyCell>
