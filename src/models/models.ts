@@ -25,5 +25,6 @@ export type Match = {
 export type MatchDay = {
   date: Date,
   matchday: number,
-  matches: Match[]
+  matches: Match[],
+  bye_players?: Player[]
 }
