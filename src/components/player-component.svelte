@@ -14,9 +14,10 @@
     </div>
   {/if}
 
-  <div class="flex flex-row flex-wrap w-full" class:justify-end="{left}">
-    <span class="px-1 font-normal">{player.name}</span>
-    <span class="px-1 font-bold">{player.surname}</span>
+  <div class="flex flex-row flex-wrap w-full px-1" class:justify-end="{left}">
+    <span class="font-normal">{player.name}</span>
+    &nbsp;
+    <span class="font-bold">{player.surname}</span>
   </div>
 
   {#if left}
