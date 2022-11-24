@@ -27,7 +27,7 @@
 <Accordion multiple>
   {#each calendar as matchday}
     <AccordionItem>
-      <span slot="header">Jornada {matchday.matchday} - {(new Date(matchday.date)).toLocaleDateString()}</span>
+      <span slot="header">Jornada {matchday.matchday} - {(new Date(matchday.date)).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
       
       <div id={`matches-${matchday.matchday}`} class="flex flex-row flex-wrap justify-evenly justify-self-center">
         {#each matchday.matches as match}
