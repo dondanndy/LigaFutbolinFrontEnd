@@ -2,7 +2,6 @@ export type Player = {
   id: string,
   name: string,
   surname: string,
-  avatar: string
 }
 
 export type Team = {

@@ -5,12 +5,14 @@
 
   export let player: Player;
   export let left: boolean = false;
+
+  const IMG_ROUTE = "useravatar"
 </script>
 
-<div class="flex flex-row" class:justify-end="{left}">
+<div class="flex flex-row items-center" class:justify-end="{left}">
   {#if !left}
     <div class="flex justify-end items-center w-1/3 min-w-fit max-w-fit pr-1">
-        <Avatar src={player.avatar} alt={`${player.name} ${player.surname} avatar`} size="xs"/>
+        <Avatar src={`${IMG_ROUTE}/${player.id}.jpg`} alt={`${player.name} ${player.surname} avatar`} size="xs"/>
     </div>
   {/if}
 
@@ -22,7 +24,7 @@
 
   {#if left}
     <div class="flex justify-begin items-center w-1/3 min-w-fit max-w-fit pl-1">
-      <Avatar src={player.avatar} alt={`${player.name} ${player.surname} avatar`} size="xs"/>
+      <Avatar src={`${IMG_ROUTE}/${player.id}.jpg`} alt={`${player.name} ${player.surname} avatar`} size="xs"/>
     </div>
   {/if}
 </div>
