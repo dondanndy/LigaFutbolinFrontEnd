@@ -10,8 +10,8 @@
 
   let selectedPlayerID: string;
 
-  onMount(async () => {
-        await fetch('/matches.json')
+  async function reloadData(){
+    await fetch('https://matches.dondanndy.workers.dev')
           .then(response =>
             response.json() as Promise<any>
           )
@@ -21,8 +21,9 @@
                 matches = response["matches"];
               }
             );
-      }
-    );
+  }
+
+  onMount(async () => { await reloadData(); });
 
   $:
       if (selectedPlayerID){
@@ -47,7 +48,7 @@
 <div class="flex flex-row flex-wrap justify-evenly justify-self-center">
   {#each filteredMatches as match}
     <div class="p-2 w-full md:w-1/2">
-      <GameCard {match}/>
+      <GameCard {match} on:gameInfoChanged={reloadData}/>
     </div>
   {/each}
 </div>

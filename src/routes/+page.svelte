@@ -13,30 +13,31 @@
   let standings: StandingsPlayer[] = [];
   let matches: Match[] = [];
 
-  onMount(async () => {
-        await fetch('/matches.json')
+  async function reloadData(){
+    await fetch('https://matches.dondanndy.workers.dev')
           .then(response =>
             response.json() as Promise<any>
           )
           .then(
             (response: any) =>
               { 
-                matches = response["matches"].slice(0,5);
+                matches = response["matches"].slice(0,4);
               }
             );
 
-        await fetch('/standings.json')
+        await fetch('https://standings.dondanndy.workers.dev')
           .then(response =>
             response.json() as Promise<StandingsPlayer[]>
           )
           .then(
-            (response: StandingsPlayer[]) =>
+            (response: any) =>
               { 
-                standings = response.slice(0,5);
+                standings = response.standings.slice(0,10);
               }
             );
-      }
-    );
+  }
+
+  onMount(async () => { await reloadData(); });
 </script>
 
 
@@ -50,7 +51,7 @@
     <div class="flex flex-row flex-wrap justify-evenly justify-self-center py-3">
       {#each matches as match}
         <div class="p-2 w-full">
-          <GameCard {match}/>
+          <GameCard {match} on:gameInfoChanged={reloadData}/>
         </div>
       {/each}
     </div>

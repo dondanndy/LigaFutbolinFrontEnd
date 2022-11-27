@@ -1,28 +1,38 @@
 <script lang="ts">
   import { Card, Modal, Button} from "flowbite-svelte";
-
+  
   import GameEdition from "./game-edition.svelte";
   import PlayerComponent from "./player-component.svelte";
   import type { Match } from "../models/models"
+	import { createEventDispatcher } from "svelte";
   
+  const dispatch = createEventDispatcher();
   export let match: Match;
 
   let showEditingModal = false;
 
+  function emitGameInfoChanged() {
+    dispatch('gameInfoChanged');
+  }
+
   let openModal = () => {
     showEditingModal = true;
+  }
+
+  let closeModal = () => {
+    showEditingModal = false;
   }
 </script>
 
 <div class="w-full" on:click={openModal}>
-<Card size="xl" class="{match.result ? 'dark:bg-gray-900' : 'dark:bg-gray-800'}">
+  <Card size="xl" class="{match.result ? 'dark:bg-gray-900' : 'dark:bg-gray-800'}">
     {#if match.matchday && match.date}
       <div class="flex flex-row items-center pb-2 pt-0">
         Jornada {match.matchday} - {(new Date(match.date)).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
       </div>
     {/if}
 
-  <div class="flex flex-row items-center">
+    <div class="flex flex-row items-center">
     <div class="flex flex-col justify-items-start w-2/5">
       <div class="py-1">
         <PlayerComponent player={match.team1.player1}/>
@@ -57,5 +67,5 @@
 </div>
 
 <Modal bind:open={showEditingModal}>
-   <GameEdition {match}/>
+   <GameEdition {match} on:gameInfoChanged={() => { emitGameInfoChanged(); closeModal();}}/>
 </Modal>

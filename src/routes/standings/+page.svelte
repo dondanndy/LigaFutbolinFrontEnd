@@ -6,18 +6,21 @@
 
   import PlayerComponent from "../../components/player-component.svelte";
 
+  interface StandingsResponse {
+    standings: StandingsPlayer[]
+  }
 
   let standings: StandingsPlayer[] = [];
 
   onMount(async () => {
-        await fetch('/standings.json')
+        await fetch('https://standings.dondanndy.workers.dev')
           .then(response =>
-            response.json() as Promise<StandingsPlayer[]>
+            response.json() as Promise<StandingsResponse>
           )
           .then(
-            (response: StandingsPlayer[]) =>
+            (response: StandingsResponse) =>
               { 
-                standings = response;
+                standings = response.standings;
               }
             );
       }

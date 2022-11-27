@@ -1,16 +1,64 @@
 <script lang="ts">
-  import { Button, NumberInput } from "flowbite-svelte";
+  import { Button, Spinner } from "flowbite-svelte";
 
+	import { createEventDispatcher } from "svelte";
   import ResultInput from "./result-input.svelte";
   import PlayerComponent from "./player-component.svelte";
   import type { Match, MatchResult } from "../models/models"
   
   export let match: Match;
 
+  const dispatch = createEventDispatcher();
+
+  function emitGameInfoChanged() {
+    dispatch('gameInfoChanged');
+  }
+
   let result: MatchResult;
 
+  let isSaving: boolean = false;
+  let isRemoving: boolean = false;
+
+  const getResultToSend = () :any =>{
+    let resultToSend: any = {};
+
+    resultToSend.result = result;
+    resultToSend.matchday = match.matchday;
+    resultToSend.id = match.id;
+
+    return resultToSend;
+  }
+
   const saveResult = () => {
-    console.log(result);
+    const resultToSend =  getResultToSend();
+
+    isSaving = true;
+
+    fetch('https://update.dondanndy.workers.dev', {
+      method: 'POST',
+      body: JSON.stringify(resultToSend)
+    }).then((res:any) =>{
+      console.log(res);
+      isSaving = false;
+
+      emitGameInfoChanged();
+    });
+  }
+
+  const removeResult = () => {
+    const resultToSend =  getResultToSend();
+
+    isRemoving = true;
+
+    fetch('https://update.dondanndy.workers.dev/remove', {
+      method: 'POST',
+      body: JSON.stringify(resultToSend)
+    }).then((res:any) =>{
+      console.log(res);
+      isRemoving = false;
+
+      emitGameInfoChanged();
+    });
   }
   
   $:{
@@ -31,9 +79,9 @@
   </div>
 
   <div id="game" class="flex flex-col md:flex-row items-center py-5">
-    <div class="flex flex-row md:flex-col justify-items-start w-2/5 min-w-fit">
+    <div class="flex flex-row md:flex-col justify-items-start w-full md:w-2/5 min-w-fit">
 
-      <div class="py-1 md:hidden px-3 md:px-0">
+      <div class="py-1 md:hidden px-3 md:px-0 w-1/2">
         <PlayerComponent player={match.team1.player1} left={true}/>
       </div>
 
@@ -60,8 +108,8 @@
       </div>
     </div>
     
-    <div class="flex flex-row md:flex-col justify-items-end w-2/5 min-w-fit">
-      <div class="py-1 px-3 md:px-0">
+    <div class="flex flex-row md:flex-col justify-items-end w-full md:w-2/5 min-w-fit">
+      <div class="py-1 px-3 md:px-0 w-1/2 md:w-full">
         <PlayerComponent player={match.team2.player1} left={true}/>
       </div>
       
@@ -77,8 +125,26 @@
 
   <div id="buttons" class="flex justify-center space-x-3 md:mt-6">
     <span on:click|stopPropagation={saveResult}>
-      <Button>Guardar</Button>
+      <Button disbled={isSaving || isRemoving}>
+        {#if isSaving}
+          <Spinner class="mr-3" size="4" color="white" />
+        {:else}
+          Guardar
+        {/if}
+      </Button>
     </span>
     <Button color="light" class="dark:text-white">Descartar</Button>
+
+   {#if match.result} 
+    <span on:click|stopPropagation={removeResult}>
+      <Button disbled={isSaving || isRemoving} color="red">
+        {#if isRemoving}
+          <Spinner class="mr-3" size="4" color="white" />
+        {:else}
+          Eliminar
+        {/if}
+      </Button>
+    </span>
+    {/if}
   </div>
 </div>

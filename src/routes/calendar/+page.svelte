@@ -9,8 +9,8 @@
 
   let calendar: MatchDay[] = [];
 
-  onMount(async () => {
-        await fetch('/calendar.json')
+  async function reloadCalendar(){
+    await fetch('https://calendar.dondanndy.workers.dev')
           .then(response =>
             response.json() as Promise<any>
           )
@@ -20,8 +20,9 @@
                 calendar = response["matchdays"];
               }
             );
-      }
-    );
+  }
+
+  onMount(async () => { await reloadCalendar(); });
 </script>
 
 <Accordion multiple>
@@ -32,7 +33,7 @@
       <div id={`matches-${matchday.matchday}`} class="flex flex-row flex-wrap justify-evenly justify-self-center">
         {#each matchday.matches as match}
           <div class="p-2 w-full md:w-1/2">
-            <GameCard {match}/>
+            <GameCard {match} on:gameInfoChanged={reloadCalendar}/>
           </div>
         {/each}
       </div>
