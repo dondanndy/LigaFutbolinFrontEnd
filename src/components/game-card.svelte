@@ -11,12 +11,17 @@
 
   let showEditingModal = false;
 
+  function isEditionAvailable(): boolean{
+    return window.localStorage.getItem('edit') == "true";
+  }
+
   function emitGameInfoChanged() {
     dispatch('gameInfoChanged');
   }
 
   let openModal = () => {
-    showEditingModal = true;
+    if (isEditionAvailable())
+      showEditingModal = true;
   }
 
   let closeModal = () => {
