@@ -19,6 +19,8 @@ export type Match = {
   team1: Team,
   team2: Team,
   result: MatchResult
+  matchday?: number,
+  date?: Date
 }
 
 export type MatchDay = {
