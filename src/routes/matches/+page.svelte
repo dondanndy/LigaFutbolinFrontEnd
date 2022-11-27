@@ -2,15 +2,20 @@
   import { onMount } from "svelte";
 
   import PlayerPicker from "../../components/player-picker.svelte";
+  import LoadableContent from "../../components/loadableContent.svelte";
   import GameCard from "../../components/game-card.svelte";
-  import type { Match } from "../../models/models";
+  import { DataLoadingStatus, type Match } from "../../models/models";
 
   let matches: Match[] = [];
   let filteredMatches: Match[] = [];
 
   let selectedPlayerID: string;
 
+  let dataLoadingStatus: DataLoadingStatus = DataLoadingStatus.Loading;
+
   async function reloadData(){
+    dataLoadingStatus = DataLoadingStatus.Loading;
+
     await fetch('https://matches.dondanndy.workers.dev')
           .then(response =>
             response.json() as Promise<any>
@@ -19,6 +24,7 @@
             (response: any) =>
               { 
                 matches = response["matches"];
+                dataLoadingStatus = DataLoadingStatus.Complete;
               }
             );
   }
@@ -45,10 +51,12 @@
   </span>
 </div>
 
-<div class="flex flex-row flex-wrap justify-evenly justify-self-center">
-  {#each filteredMatches as match}
+<LoadableContent {dataLoadingStatus}>
+  <div class="flex flex-row flex-wrap justify-evenly justify-self-center">
+    {#each filteredMatches as match}
     <div class="p-2 w-full md:w-1/2">
       <GameCard {match} on:gameInfoChanged={reloadData}/>
     </div>
-  {/each}
-</div>
+    {/each}
+  </div>
+</LoadableContent>

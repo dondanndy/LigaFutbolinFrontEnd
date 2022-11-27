@@ -29,3 +29,9 @@ export type MatchDay = {
   matches: Match[],
   bye_players?: Player[]
 }
+
+export enum DataLoadingStatus{
+  Loading,
+  Complete,
+  Error
+}
