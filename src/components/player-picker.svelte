@@ -48,7 +48,10 @@
   $: {
     if (textSearched){
       filteredPlayers = allPlayers.filter((player : Player) => {
-        return player.name.includes(textSearched) || player.surname.includes(textSearched) || getCompletePlayerName(player).includes(textSearched);
+        const correctedSearch: string = textSearched.toLowerCase();
+        return    player.name.toLowerCase().includes(correctedSearch)
+               || player.surname.toLowerCase().includes(correctedSearch)
+               || getCompletePlayerName(player).toLowerCase().includes(correctedSearch);
       });
     }
     else {
