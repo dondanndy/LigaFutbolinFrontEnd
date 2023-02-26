@@ -9,4 +9,5 @@ export type StandingsPlayer = {
   games_lost: number,
   goals_for: number,
   goals_against: number
+  goals_difference: number
 }

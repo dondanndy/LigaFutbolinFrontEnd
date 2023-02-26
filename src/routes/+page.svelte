@@ -84,8 +84,9 @@
             <TableHeadCell></TableHeadCell>
             <TableHeadCell class="text-center">Jugador</TableHeadCell>
             <TableHeadCell>Puntos</TableHeadCell>
-            <TableHeadCell>P. Ganados </TableHeadCell>
-            <TableHeadCell>P. Perdidos</TableHeadCell>
+            <TableHeadCell>P. G. </TableHeadCell>
+            <TableHeadCell>P. P.</TableHeadCell>
+            <TableHeadCell>Dif. Goles</TableHeadCell>
           </TableHead>
           <TableBody class="divide-y">
             {#each standings as standingsPlayer}
@@ -95,6 +96,7 @@
                 <TableBodyCell> {standingsPlayer.points } </TableBodyCell>
                 <TableBodyCell> {standingsPlayer.games_won } </TableBodyCell>
                 <TableBodyCell> {standingsPlayer.games_lost } </TableBodyCell>
+                <TableBodyCell> {standingsPlayer.goals_difference } </TableBodyCell>
               </TableBodyRow>
             {/each}
           </TableBody>

@@ -46,6 +46,7 @@
       <TableHeadCell>P. Perdidos</TableHeadCell>
       <TableHeadCell>Goles Favor</TableHeadCell>
       <TableHeadCell>Goles Contra</TableHeadCell>
+      <TableHeadCell>Diferencia goles</TableHeadCell>
     </TableHead>
     <TableBody class="divide-y">
       {#each standings as standingsPlayer}
@@ -58,6 +59,7 @@
         <TableBodyCell> {standingsPlayer.games_lost } </TableBodyCell>
         <TableBodyCell> {standingsPlayer.goals_for } </TableBodyCell>
         <TableBodyCell> {standingsPlayer.goals_against } </TableBodyCell>
+        <TableBodyCell> {standingsPlayer.goals_difference } </TableBodyCell>
       </TableBodyRow>
       {/each}
     </TableBody>
